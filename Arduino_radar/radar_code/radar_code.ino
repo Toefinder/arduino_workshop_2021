@@ -4,7 +4,6 @@
 const int trigPin = 10;
 const int echoPin = 11;
 // Variables for the duration and the distance
-long duration;
 int distance;
 Servo myServo; // Creates a servo object for controlling the servo motor
 void setup() {
@@ -45,7 +44,7 @@ int calculateDistance(){
   digitalWrite(trigPin, HIGH); 
   delayMicroseconds(10);
   digitalWrite(trigPin, LOW);
-  duration = pulseIn(echoPin, HIGH); // Reads the echoPin, returns the sound wave travel time in microseconds
-  distance= duration*0.034/2;
-  return (int) distance;
+  unsigned long duration = pulseIn(echoPin, HIGH); // Reads the echoPin, returns the sound wave travel time in microseconds
+  float dist = duration*0.034/2;
+  return (int) dist;
 }
