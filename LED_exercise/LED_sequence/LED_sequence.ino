@@ -6,7 +6,7 @@ char incomingByte = 'n'; // for incoming serial data
 
 void setup()
 {
-  //set pins in the pin array as input
+  //set pins in the pin array as output
   for (int pinIndex = 0; pinIndex <= 8; pinIndex++)
   {
     thisPin = pinArray[pinIndex];
